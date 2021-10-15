@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FlashClock</string>
+    <string name="action_timer">Báo Thức</string>
+    <string name="action_timenation">Giờ Quốc Tế</string>
+    <string name="action_presstime">Bấm Giờ</string>
+    <string name="bao_thuc">Bao Thuc</string>
+    <string name="b_o_th_c">Báo Thức</string>
+    <string name="s_a">Sửa</string>
+    <string name="tho_t">Thoát</string>
+    <string name="ho_n_t_t">Hoàn tất</string>
+    <string name="add">+</string>
+</resources>
