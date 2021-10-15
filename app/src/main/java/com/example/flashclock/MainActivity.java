@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mBottomNavigationView = findViewById(R.id.bottom_nav);
         mViewPager = findViewById(R.id.view_pager);
-
 
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
@@ -53,37 +56,33 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                if (id == R.id.action_timer){
+                if (id == R.id.action_timer) {
                     mViewPager.setCurrentItem(0);
-                }else if(id == R.id.action_timenation) {
+                } else if (id == R.id.action_timenation) {
                     mViewPager.setCurrentItem(1);
-                }else  if(id == R.id.action_presstime) {
+                } else if (id == R.id.action_presstime) {
                     mViewPager.setCurrentItem(2);
                 }
                 return true;
             }
         });
-        
-       mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-           @Override
-           public void onPageSelected(int position) {
-               super.onPageSelected(position);
-               switch (position) {
-                   case 0:
-                       mBottomNavigationView.getMenu().findItem(R.id.action_timer).setChecked(true);
-                       break;
-                   case 1:
-                       mBottomNavigationView.getMenu().findItem(R.id.action_timenation).setChecked(true);
-                       break;
-                   case 2:
-                       mBottomNavigationView.getMenu().findItem(R.id.action_presstime).setChecked(true);
-                       break;
-               }
-           }
-       });
 
-       //TIME
-
-
+        mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                switch (position) {
+                    case 0:
+                        mBottomNavigationView.getMenu().findItem(R.id.action_timer).setChecked(true);
+                        break;
+                    case 1:
+                        mBottomNavigationView.getMenu().findItem(R.id.action_timenation).setChecked(true);
+                        break;
+                    case 2:
+                        mBottomNavigationView.getMenu().findItem(R.id.action_presstime).setChecked(true);
+                        break;
+                }
+            }
+        });
     }
 }
