@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="1dp"
-            app:itemBackground="@color/purple_200"
+            app:itemBackground="@color/black"
             app:itemIconTint="@color/custom_color_bottom_nav"
             app:itemTextColor="@color/custom_color_bottom_nav"
             app:menu="@menu/menu_bottom_nav" />

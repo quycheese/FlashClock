@@ -8,5 +8,29 @@
     <string name="s_a">Sửa</string>
     <string name="tho_t">Thoát</string>
     <string name="ho_n_t_t">Hoàn tất</string>
+    <string name="h_m_nay_0g">Hôm nay, +0G</string>
+    <string name="gi_qu_c_t">Giờ Quốc Tế</string>
+    <string name="_00_00_00">00:00:00</string>
+    <string name="todo">TODO</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="delete">Delete</string>
     <string name="add">+</string>
+    <string name="_15_30">15:30</string>
+    <string name="kh_c">Khác</string>
+    <string name="l_p_l_i">Lặp lại</string>
+    <string name="l_u">Lưu</string>
+    <string name="t_n_b_o_th_c">Tên báo thức</string>
+    <string name="t_n_nh_c_chu_ng">Tên nhạc chuông</string>
+
+    <string-array name="repeat">
+        <item>Luôn Thứ Hai</item>
+        <item>Luôn Thứ Ba</item>
+        <item>Luôn Thứ Tư</item>
+        <item>Luôn Thứ Năm</item>
+        <item>Luôn Thứ Sáu</item>
+        <item>Luôn Thứ Bảy</item>
+        <item>Luôn Chủ Nhật</item>
+        <item>Luôn Luôn</item>
+    </string-array>
 </resources>

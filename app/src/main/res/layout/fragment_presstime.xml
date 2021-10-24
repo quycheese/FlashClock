@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#3F2F43">
+    tools:context=".Activity.MainActivity"
+    android:background="@color/black">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:ignore="UselessParent">
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
             android:gravity="center"
-            android:text="00:00:00"
-            android:textColor="@color/black"
-            android:textSize="50sp"
+            android:text="@string/_00_00_00"
+            android:textColor="@color/white"
+            android:textSize="90sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -28,11 +30,17 @@
             android:id="@+id/stop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_stop"
-            android:layout_margin="72dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
-            android:onClick="onStop"/>
+            android:layout_marginStart="72dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginEnd="72dp"
+            android:layout_marginBottom="72dp"
+            android:contentDescription="@string/todo"
+            android:onClick="onStop"
+            android:backgroundTint="@color/bottom_nv"
+            android:src="@drawable/ic_stop"
+            tools:ignore="OnClick,UsingOnClickInXml" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/start"
@@ -42,15 +50,21 @@
             android:layout_margin="72dp"
             android:layout_centerInParent="true"
             android:layout_alignParentBottom="true"
-            android:onClick="onStart"/>
+            android:contentDescription="@string/todo"
+            android:backgroundTint="@color/bottom_nv"
+            android:onClick="onStart"
+            tools:ignore="OnClick,UsingOnClickInXml" />
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/reset"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_refresh"
+            android:backgroundTint="@color/bottom_nv"
             android:layout_margin="72dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:contentDescription="@string/todo"
+            tools:ignore="ExtraText,RelativeOverlap,UsingOnClickInXml"
             android:onClick="onReset"/>
     </RelativeLayout>
 </LinearLayout>

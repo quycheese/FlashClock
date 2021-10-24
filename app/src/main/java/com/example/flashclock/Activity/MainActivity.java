@@ -1,4 +1,4 @@
-package com.example.flashclock;
+package com.example.flashclock.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+import com.example.flashclock.R;
+import com.example.flashclock.ViewPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
@@ -84,5 +86,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void onStop(View view) {
+    }
+
+    public void onStart(View view) {
+    }
+
+    public void onReset(View view) {
     }
 }

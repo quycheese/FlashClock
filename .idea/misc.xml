@@ -17,6 +17,20 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FlashClock/app/src/main/res/layout/item_clock.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FlashClock/app/src/main/res/layout/present_view.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FlashClock/app/src/main/res/menu/menu_bottom_nav.xml" value="0.24666666666666667" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/drawable/switch_thumb.xml" value="0.1648148148148148" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/drawable/switch_track.xml" value="0.1648148148148148" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/activity_create_time.xml" value="0.176" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/activity_create_timer.xml" value="0.176" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/fragment_presstime.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/fragment_timenation.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/fragment_timer.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/item.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/item_clock.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/item_timenation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/listview_timer.xml" value="0.136" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/layout/menuday_dropdown.xml" value="0.12183383991894631" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/app/src/main/res/menu/menu_bottom_nav.xml" value="0.264" />
       </map>
     </option>
   </component>
