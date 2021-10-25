@@ -34,21 +34,23 @@ public class TimeNamtionAdapter extends BaseAdapter {
         return 0;
     }
 
-    private TextView txt_GTM;
-    private TextView txt_Location;
-    private TextView txt_Time;
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         View item ;
         if(view == null){
             item = View.inflate(viewGroup.getContext(), R.layout.item_timenation,null);
-        } else item = view;
+        } else {
+            item = view;
+        }
 
         TimeNation timeNation = (TimeNation) getItem(i);
-        (txt_GTM = item.findViewById(R.id.txt_GTM)).setText(String.format(timeNation.getGTM()));
-        (txt_Location = item.findViewById(R.id.txt_Location)).setText(String.format(timeNation.getLocation()));
-        (txt_Time= item.findViewById(R.id.txt_Time)).setText(String.format(timeNation.getTime()));
+        TextView txt_GTM = item.findViewById(R.id.txt_GTM);
+        TextView txt_Location = item.findViewById(R.id.txt_Location);
+        TextView txt_Time= item.findViewById(R.id.txt_Time);
+        txt_GTM.setText(String.format(timeNation.getGTM()));
+        txt_Location.setText(String.format(timeNation.getLocation()));
+        txt_Time.setText(String.format(timeNation.getTime()));
 
         return item;
     }

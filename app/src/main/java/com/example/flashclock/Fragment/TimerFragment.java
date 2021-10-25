@@ -1,18 +1,18 @@
 package com.example.flashclock.Fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -25,6 +25,7 @@ import com.example.flashclock.ItemTouchHelperListener;
 import com.example.flashclock.Model.ListTime;
 import com.example.flashclock.R;
 import com.example.flashclock.RecyclerViewItemTouchHelper;
+import com.example.flashclock.SQLite.MyDatabaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -38,12 +39,8 @@ public class TimerFragment extends Fragment implements ItemTouchHelperListener {
     private List<ListTime> timeList;
     private LinearLayout fragmentTimer;
     private TextView txtAdd;
-    private Button btnSave;
 
-
-
-    private Context This;
-
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -69,29 +66,25 @@ public class TimerFragment extends Fragment implements ItemTouchHelperListener {
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private List<ListTime> getTimeList(){
         List<ListTime> list = new ArrayList<>();
-        {
-            list.add(new ListTime("15:30"));
-        }
+        MyDatabaseHelper myDB = new MyDatabaseHelper(getContext());
+        list.addAll(myDB.selectAllAlarm());
         return list;
     }
     
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     private void addRecycleView() {
-
         fragmentTimer = (LinearLayout) view.findViewById(R.id.fragment_timer);
-
-
-        ////
-
         rcvTime = (RecyclerView) view.findViewById(R.id.rcv_listtime);
         rcvTime.setHasFixedSize(true);
         rcvTime.setLayoutManager(new LinearLayoutManager(view.getContext()));
 
         timeList = getTimeList();
-        adapter = new AdapterListTime(timeList);
+        adapter = new AdapterListTime(timeList, this);
         rcvTime.setAdapter(adapter);
 
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL);
@@ -101,8 +94,6 @@ public class TimerFragment extends Fragment implements ItemTouchHelperListener {
         new ItemTouchHelper(simpleCallback).attachToRecyclerView(rcvTime);
     }
 
-
-
     @Override
     public void onSwiped(RecyclerView.ViewHolder viewHolder) {
 
@@ -111,6 +102,8 @@ public class TimerFragment extends Fragment implements ItemTouchHelperListener {
 
             ListTime timeDelete = timeList.get(viewHolder.getAdapterPosition());
             int indexDelete = viewHolder.getAdapterPosition();
+            MyDatabaseHelper myDB = new MyDatabaseHelper (getContext());
+            myDB.deleteAlarm(timeDelete.getId());
             //remove item
             adapter.removeItem(indexDelete);
             Snackbar snackbar = Snackbar.make(fragmentTimer, nameTimeDelete + " removed.!", Snackbar.LENGTH_LONG );

@@ -1,8 +1,6 @@
 package com.example.flashclock.Fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,24 +33,22 @@ public class TimenationFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_timenation,container, false);
-
         addTimeNation();
         return view;
     }
 
-    private void addTimeNation() {
+    public void addTimeNation() {
 
-        listView = (ListView) view.findViewById(R.id.rcv_ListTime_Nation);
-
-        list = new ArrayList<>();
-        list.add(new TimeNation("GTM + 7G", "Tp. Ben Tre","18:30"));
-        list.add(new TimeNation("GTM + 7G", "Tp. Can Tho","18:30"));
-        list.add(new TimeNation("GTM + 7G", "Tp. My Tho","18:30"));
-        list.add(new TimeNation("GTM + 7G", "Tp. Tan An","18:30"));
-
-        timeNamtionAdapter = new TimeNamtionAdapter(list);
-        listView.setAdapter(timeNamtionAdapter);
-
+//        listView = (ListView) view.findViewById(R.id.rcv_ListTime_Nation);
+//
+//        list = new ArrayList<>();
+//        list.add(new TimeNation("GTM + 7G", "Tp. Ben Tre","18:30"));
+//        list.add(new TimeNation("GTM + 7G", "Tp. Can Tho","18:30"));
+//        list.add(new TimeNation("GTM + 7G", "Tp. My Tho","18:30"));
+//        list.add(new TimeNation("GTM + 7G", "Tp. Tan An","18:30"));
+//
+//        timeNamtionAdapter = new TimeNamtionAdapter(list);
+//        listView.setAdapter(timeNamtionAdapter);
     }
 }
 
