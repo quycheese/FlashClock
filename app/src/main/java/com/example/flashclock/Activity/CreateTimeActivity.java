@@ -35,10 +35,11 @@ import java.util.List;
 public class CreateTimeActivity extends AppCompatActivity {
 
     private int hourChoice, minuteChoice;
-    private EditText edtTimer;
+    private TextView edtTimer;
     private EditText edtNotice;
     private Button btnSave;
     private String timeAlarm;
+    private Button btnExit;
 
 
     String[] items = {"Luôn Thứ Hai", "Luôn Thứ Ba", "Luôn Thứ Tư", "Luôn Thứ Năm", "Luôn Thứ Sáu", "Luôn Thứ Bảy", "Luôn Chủ Nhật", "Luôn Luôn"};
@@ -56,6 +57,18 @@ public class CreateTimeActivity extends AppCompatActivity {
         addTime();
         autoComplete();
         saveAlarm();
+        Exit();
+    }
+
+    public void Exit(){
+        btnExit = findViewById(R.id.btn_exit);
+        btnExit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent intent = new Intent(CreateTimeActivity.this, TimerFragment.class);
+                    startActivity(intent);
+            }
+        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -89,7 +102,7 @@ public class CreateTimeActivity extends AppCompatActivity {
         btnSave = findViewById(R.id.btn_save);
         btnSave.setOnClickListener(v -> {
             if (edtTimer == null || edtTimer.equals("")) {
-                Toast.makeText(CreateTimeActivity.this, "Please select time before save!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreateTimeActivity.this, "Vui lòng chọn giờ trước khi lưu.!", Toast.LENGTH_SHORT).show();
             } else {
                 MyDatabaseHelper myDB = new MyDatabaseHelper (CreateTimeActivity.this);
                 myDB.btnSaveTime(edtTimer.getText().toString().trim(), edtNotice.getText().toString());

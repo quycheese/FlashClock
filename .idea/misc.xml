@@ -17,6 +17,25 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FlashClock/app/src/main/res/layout/item_clock.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FlashClock/app/src/main/res/layout/present_view.xml" value="0.21784420289855072" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/FlashClock/app/src/main/res/menu/menu_bottom_nav.xml" value="0.24666666666666667" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_add.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_notification.xml" value="0.2703125" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_play_arrow.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_refresh.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_repeat.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_selecttimer.xml" value="0.2703125" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/ic_stop.xml" value="0.26296296296296295" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/switch_thumb.xml" value="0.2703125" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/drawable/switch_track.xml" value="0.2703125" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/activity_create_time.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/fragment_presstime.xml" value="0.176" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/fragment_timenation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/fragment_timer.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/item_timenation.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/listview_timer.xml" value="0.2246376811594203" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/menuday_dropdown.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/ACER/FlashClock/FlashClock/FlashClock/app/src/main/res/layout/simple_spinner_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Tony-Tuan/AndroidStudioProjects/FlashClock/app/src/main/res/layout/activity_create_time.xml" value="0.18" />
         <entry key="..\:/Users/Tony-Tuan/AndroidStudioProjects/FlashClock/app/src/main/res/layout/activity_create_timer.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/Tony-Tuan/AndroidStudioProjects/FlashClock/app/src/main/res/layout/activity_main.xml" value="0.14791666666666667" />

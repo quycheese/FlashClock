@@ -9,42 +9,50 @@
     tools:context=".Activity.MainActivity"
     android:background="@color/black">
 
-    <EditText
+    <TextView
         android:id="@+id/edt_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="120dp"
-        android:hint="Select Time"
+        android:hint="Chọn thời gian"
         android:textSize="32sp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
-        android:drawableStart="@drawable/ic_timer"
-        android:drawablePadding="16dp"
-        android:background="#425953"/>
+        android:textColorHint="@color/white"
+        android:drawableStart="@drawable/ic_selecttimer"
+        android:drawablePadding="5dp" />
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
-        android:background="@color/white">
+        android:background="@color/black">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black">
         <EditText
             android:id="@+id/edt_notice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/t_n_b_o_th_c"
-            android:textSize="25sp" />
+            android:textColorHint="@color/white"
+            android:textSize="25sp"
+            android:layout_marginLeft="5dp"/>
+        </LinearLayout>
 
         <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:layout_marginTop="50dp">
-        <com.google.android.material.textfield.TextInputLayout
+           android:layout_marginTop="50dp"
+            android:background="@color/black">
+    <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="match_parent"
-            app:hintTextColor="@color/black"
+            app:hintTextColor="@color/white"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black">
 
@@ -54,7 +62,7 @@
                 android:layout_height="match_parent"
                 android:text="Lặp lại"
                 android:textSize="25sp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:layout_weight="1"
                 android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -67,14 +75,15 @@
         android:layout_height="wrap_content"
         android:weightSum="2"
         android:orientation="horizontal"
-        android:layout_marginTop="220dp">
+        android:layout_marginTop="240dp">
 
     <Button
-        android:id="@+id/txt_exit"
+        android:id="@+id/btn_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/tho_t"
+        android:hint="@string/thoat"
+        android:textColorHint="@color/white"
         android:textSize="25sp"
         android:backgroundTint="@color/black"
         android:layout_marginEnd="70dp"/>
@@ -84,7 +93,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/l_u"
+        android:hint="@string/l_u"
+        android:textColorHint="@color/white"
         android:textSize="25sp"
         android:textColor="@color/white"
         android:backgroundTint="@color/black"

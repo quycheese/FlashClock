@@ -4,51 +4,116 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.flashclock.Adapter.TimeNamtionAdapter;
-import com.example.flashclock.Model.TimeNation;
 import com.example.flashclock.R;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
-public class TimenationFragment extends Fragment {
+import java.util.TimeZone;
+
+import android.widget.AdapterView;
 
 
-    private List<TimeNation> list;
-    private ListView listView;
-    private TimeNamtionAdapter timeNamtionAdapter;
+public class TimenationFragment<idArray, idAdapter> extends Fragment {
+
     private View view;
+
+    private Calendar current;
+    private Spinner spinner;
+    private TextView timezone, txtCurrentTime, txtTimeZoneTime;
+    private long miliSeconds;
+        ArrayAdapter<String> idAdapter;
+        SimpleDateFormat sdf;
+        Date resultDate;
 
     @Nullable
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_timenation,container, false);
-        addTimeNation();
+        view = inflater.inflate(R.layout.fragment_timenation, container, false);
+
+
+        NationTime();
+
+
         return view;
     }
 
-    public void addTimeNation() {
+    private void NationTime(){
+        spinner = (Spinner) view.findViewById(R.id.spinner);
+        timezone = (TextView) view.findViewById(R.id.timezone);
+        txtCurrentTime = (TextView) view.findViewById(R.id.txtCurrentTime);
+        txtTimeZoneTime = (TextView) view.findViewById(R.id.txtTimeZoneTime);
 
-//        listView = (ListView) view.findViewById(R.id.rcv_ListTime_Nation);
-//
-//        list = new ArrayList<>();
-//        list.add(new TimeNation("GTM + 7G", "Tp. Ben Tre","18:30"));
-//        list.add(new TimeNation("GTM + 7G", "Tp. Can Tho","18:30"));
-//        list.add(new TimeNation("GTM + 7G", "Tp. My Tho","18:30"));
-//        list.add(new TimeNation("GTM + 7G", "Tp. Tan An","18:30"));
-//
-//        timeNamtionAdapter = new TimeNamtionAdapter(list);
-//        listView.setAdapter(timeNamtionAdapter);
+        String[] idArray = TimeZone.getAvailableIDs();
+
+        sdf = new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm:ss");
+
+        idAdapter = new ArrayAdapter<String>(getActivity(),android.R.layout.simple_spinner_item, idArray);
+
+        idAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(idAdapter);
+        getGMTtime();
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                getGMTtime();
+                String selectedID = (String) (parent.getItemAtPosition(position));
+
+                TimeZone timeZone = TimeZone.getTimeZone(selectedID);
+                String TimeZoneName = timeZone.getDisplayName();
+
+                int TimeZoneOffset = timeZone.getRawOffset() / (60 * 1000);
+
+                int hrs = TimeZoneOffset / 60;
+                int mins = TimeZoneOffset % 60;
+
+                miliSeconds = miliSeconds + timeZone.getRawOffset();
+
+                resultDate = new Date(miliSeconds);
+                System.out.println(sdf.format(resultDate));
+
+                timezone.setText(TimeZoneName + " : GMT " + hrs + ":" + mins);
+                txtTimeZoneTime.setText("" + sdf.format(resultDate));
+                miliSeconds = 0;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+
+
+    private void getGMTtime(){
+        current = Calendar.getInstance();
+        txtCurrentTime.setText("" + current.getTime());
+
+        miliSeconds = current.getTimeInMillis();
+
+        TimeZone tzCurrent = current.getTimeZone();
+        int offset = tzCurrent.getRawOffset();
+        if (tzCurrent.inDaylightTime(new Date())){
+            offset = offset + tzCurrent.getDSTSavings();
+        }
+        miliSeconds = miliSeconds - offset;
+        resultDate = new Date(miliSeconds);
+        System.out.println(sdf.format(resultDate));
+
     }
 }
+
+
 

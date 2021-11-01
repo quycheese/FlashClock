@@ -1,5 +1,8 @@
 package com.example.flashclock.Fragment;
 
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
@@ -47,7 +50,22 @@ public class TimerFragment extends Fragment implements ItemTouchHelperListener {
         view = inflater.inflate(R.layout.fragment_timer, container, false);
         addControls();
         addRecycleView();
+        createNotification();
         return view;
+    }
+
+    private void createNotification() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            CharSequence name = "BaoThucReminder";
+            String description = "Notice for Alarm";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("BaoThuc",name,importance);
+            channel.setDescription(description);
+            
+            NotificationManager notificationManager = getActivity().getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+        }
     }
 
     private void addControls() {
@@ -106,7 +124,7 @@ public class TimerFragment extends Fragment implements ItemTouchHelperListener {
             myDB.deleteAlarm(timeDelete.getId());
             //remove item
             adapter.removeItem(indexDelete);
-            Snackbar snackbar = Snackbar.make(fragmentTimer, nameTimeDelete + " removed.!", Snackbar.LENGTH_LONG );
+            Snackbar snackbar = Snackbar.make(fragmentTimer, nameTimeDelete + " đã xóa.!", Snackbar.LENGTH_LONG );
             snackbar.setAction("UNDO", new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
